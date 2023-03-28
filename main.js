@@ -22,3 +22,16 @@ var obj = { name: "Marta", new: "yes" };
 var obj2 = { name: "Strange", let: "yes" };
 console.log(obj.name);
 console.log(obj2.let);
+
+//String trim()
+//The trim() method removes whitespace from both sides of a string.
+
+var str3 = "     Hello from the other side    ";
+var str4 = str3.trim();
+console.log(
+  "First string length = " +
+    str3.length +
+    "," +
+    " second string length = " +
+    str4.length
+);
