@@ -9,3 +9,9 @@ console.log(str.charAt(0));
 
 //ES5 allows property access on strings:
 console.log(str[2]);
+
+//Strings Over Multiple Lines
+//escaped with a backslash
+var str2 =
+  "I am a \
+multiple line string";
