@@ -1,3 +1,5 @@
+"use strict"; //JS code should be executed in "strict mode"(e.g. not use undeclared variables)
+
 //Property Access on Strings
 //The charAt() method returns the character at a specified index (position) in a string
 
