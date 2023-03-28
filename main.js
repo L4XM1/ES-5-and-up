@@ -15,3 +15,10 @@ console.log(str[2]);
 var str2 =
   "I am a \
 multiple line string";
+
+//Reserved Words as Property Names
+
+var obj = { name: "Marta", new: "yes" };
+var obj2 = { name: "Strange", let: "yes" };
+console.log(obj.name);
+console.log(obj2.let);
