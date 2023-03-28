@@ -35,3 +35,13 @@ console.log(
     " second string length = " +
     str4.length
 );
+
+//Array.isArray()
+//The isArray() method checks whether an object is an array.
+
+function myFun() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var x = document.getElementById("demo");
+  x.textContent = Array.isArray(fruits);
+}
+myFun();
