@@ -24,7 +24,7 @@ console.log(obj.name);
 console.log(obj2.let);
 
 //String trim()
-//The trim() method removes whitespace from both sides of a string.
+//The trim() method removes whitespace from both sides of a string
 
 var str3 = "     Hello from the other side    ";
 var str4 = str3.trim();
@@ -37,7 +37,7 @@ console.log(
 );
 
 //Array.isArray()
-//The isArray() method checks whether an object is an array.
+//The isArray() method checks whether an object is an array
 
 function myFun() {
   var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -45,3 +45,15 @@ function myFun() {
   x.textContent = Array.isArray(fruits);
 }
 myFun();
+
+//Array forEach()
+//The forEach() method calls a function once for each array element
+
+var txt = "";
+var numbers = [33, 22, 11, 44, 55];
+numbers.forEach(myFunction);
+document.getElementById("para").innerHTML = txt;
+
+function myFunction(value) {
+  txt = txt + value + "<br>";
+}
