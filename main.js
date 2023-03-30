@@ -51,9 +51,15 @@ myFun();
 
 var txt = "";
 var numbers = [33, 22, 11, 44, 55];
-numbers.forEach(myFunction);
-document.getElementById("para").innerHTML = txt;
 
 function myFunction(value) {
   txt = txt + value + "<br>";
 }
+
+numbers.forEach(myFunction);
+document.getElementById("para").innerHTML = txt;
+
+//another example
+[1, 2, 3].forEach(function (item, index) {
+  console.log(item, index);
+});
