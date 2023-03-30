@@ -93,3 +93,19 @@ var evens = ints.filter(function (item) {
   return item % 2 === 0;
 });
 console.log(evens);
+
+//reduce
+//take an array, do something and then pass the result to the next iteration along with the next item in the array
+
+var nums4 = nums1.reduce(sum);
+
+function sum(total, value) {
+  return total + value;
+}
+console.log(nums4);
+
+//another example
+var sum2 = [1, 2, 3].reduce(function (result, item) {
+  return result + item;
+}, 2); // 2 is the initial value of the result variable
+console.log(sum2);
