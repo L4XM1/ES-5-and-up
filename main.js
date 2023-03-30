@@ -66,6 +66,7 @@ document.getElementById("para").innerHTML = txt;
 
 //map
 //it takes an item from the array, does something to it and puts a new item in it's place
+//mapping - associating each element of one set with an element of another set
 
 var nums1 = [45, 4, 9, 16, 25];
 var nums2 = nums1.map(doubler);
@@ -96,6 +97,7 @@ console.log(evens);
 
 //reduce
 //take an array, do something and then pass the result to the next iteration along with the next item in the array
+//reduces the array into a single value
 
 var nums4 = nums1.reduce(sum);
 
@@ -106,6 +108,26 @@ console.log(nums4);
 
 //another example
 var sum2 = [1, 2, 3].reduce(function (result, item) {
+  //(accumulator, currentValue)
   return result + item;
-}, 2); // 2 is the initial value of the result variable
+}, 8); // 2 is the initial value of the result variable (if we don't put a number, it's the 1st item)
 console.log(sum2);
+
+//some
+//check if any item in the array meets the condition, returns boolean
+//(checks if some array values pass a test)
+//does not modify the original array
+var someOver18 = nums1.some(atleastOne);
+
+function atleastOne(value) {
+  return value > 18;
+}
+
+console.log(someOver18);
+
+//another example
+const hasNegativeNumbers = [1, 2, 3, -1, 4].some(function (item) {
+  return item < 0;
+});
+
+console.log(hasNegativeNumbers);
