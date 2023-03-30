@@ -75,3 +75,21 @@ function doubler(value) {
 }
 
 console.log(nums2);
+
+//filter
+//creates a new array, checks each item in an array against some condition to see if it's true or false and if it's true it will put that item in a new array
+
+var nums3 = nums1.filter(over18);
+
+function over18(val) {
+  return val > 18;
+}
+
+console.log(nums3);
+
+//another example
+var ints = [1, 2, 3];
+var evens = ints.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(evens);
