@@ -63,3 +63,15 @@ document.getElementById("para").innerHTML = txt;
 [1, 2, 3].forEach(function (item, index) {
   console.log(item, index);
 });
+
+//map
+//it takes an item from the array, does something to it and puts a new item in it's place
+
+var nums1 = [45, 4, 9, 16, 25];
+var nums2 = nums1.map(doubler);
+
+function doubler(value) {
+  return value * 2;
+}
+
+console.log(nums2);
