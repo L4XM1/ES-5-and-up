@@ -99,10 +99,10 @@ console.log(evens);
 //take an array, do something and then pass the result to the next iteration along with the next item in the array
 //reduces the array into a single value
 
-var nums4 = nums1.reduce(sum);
+var nums4 = nums1.reduce(sum, 3);
 
 function sum(total, value) {
-  return total + value;
+  return total / value;
 }
 console.log(nums4);
 
@@ -110,8 +110,18 @@ console.log(nums4);
 var sum2 = [1, 2, 3].reduce(function (result, item) {
   //(accumulator, currentValue)
   return result + item;
-}, 8); // 2 is the initial value of the result variable (if we don't put a number, it's the 1st item)
+}, 8); // 8 is the initial value of the result variable (if we don't put a number, it's the 1st item)
 console.log(sum2);
+
+//reduceRight
+
+var sum3 = nums1.reduceRight(rightReducerSum, 3);
+
+function rightReducerSum(total, value) {
+  return total / value;
+}
+
+console.log(sum3);
 
 //some
 //check if any item in the array meets the condition, returns boolean
