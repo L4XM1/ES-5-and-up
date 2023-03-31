@@ -136,8 +136,27 @@ function atleastOne(value) {
 console.log(someOver18);
 
 //another example
-const hasNegativeNumbers = [1, 2, 3, -1, 4].some(function (item) {
+var hasNegativeNumbers = [1, 2, 3, -1, 4].some(function (item) {
   return item < 0;
 });
 
 console.log(hasNegativeNumbers);
+
+//every
+// same as the some BUT now every number has to meet the condition
+//checks if ALL values are over 18
+
+var allOver18 = nums1.every(areAllOver18);
+
+function areAllOver18(value) {
+  return value > 18;
+}
+
+console.log(allOver18);
+
+//another example
+var allPositiveNumbers = [1, 2, 3, -1].every(function (item) {
+  return item > 0;
+});
+
+console.log(allPositiveNumbers);
