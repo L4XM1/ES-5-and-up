@@ -160,3 +160,20 @@ var allPositiveNumbers = [1, 2, 3, -1].every(function (item) {
 });
 
 console.log(allPositiveNumbers);
+
+//indexOf
+//search an array for an element value and return its position
+//the first occurrence of
+
+var myFruits = ["Banana", "Orange", "Apple", "Mango", "Apple"];
+
+var indexOfApple = myFruits.indexOf("Apple");
+console.log(indexOfApple); //2
+
+//lastIndexOf()
+//same as indexOf(), but searches from the end of the array
+//the last occurrence of
+
+var indexOfAppleFromEnd = myFruits.lastIndexOf("Apple");
+
+console.log(indexOfAppleFromEnd); //4
