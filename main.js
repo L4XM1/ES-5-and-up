@@ -217,3 +217,59 @@ document
 document
   .getElementById("date-wrapper")
   .appendChild(document.createElement("p")).textContent = d.toJSON();
+
+//Property Getters and Setters
+//define object methods with a syntax that looks like getting or setting a property
+//This example creates a getter for a property called fullName
+
+var person = {
+  firstName: "Aurora",
+  lastName: "Borealis ",
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  },
+};
+document.getElementById("test").innerHTML = person.fullName;
+
+//This example creates a setter and a getter for the language property:
+
+var person2 = {
+  firstName: "Jhon",
+  lastName: "Doe",
+  language: "NO",
+  get lang() {
+    return this.language;
+  },
+  set lang(value) {
+    this.language = value;
+  },
+};
+
+//set an obj property with a setter
+person2.lang = "en";
+
+//display data using a getter
+document
+  .getElementById("test")
+  .appendChild(document.createElement("p")).innerHTML =
+  "The language is " + person2.lang;
+
+//setter to secure upper case updates of language
+
+var person3 = {
+  firstName: "Jane",
+  lastName: "Doe",
+  language: "NO",
+  set lang(value) {
+    this.language = value.toUpperCase();
+  },
+};
+
+//set an obj property with a setter
+person3.lang = "en";
+
+//display data from the obj
+document
+  .getElementById("test")
+  .appendChild(document.createElement("p")).innerHTML =
+  "In upper case it is " + person3.language;
