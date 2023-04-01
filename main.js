@@ -273,3 +273,71 @@ document
   .getElementById("test")
   .appendChild(document.createElement("p")).innerHTML =
   "In upper case it is " + person3.language;
+
+//Object.defineProperty()
+//a new Object method in ES5. It lets you define an object property and/or change a property's value and/or metadata
+
+var person4 = {
+  firstName: "Maria",
+  lastName: "Horhe",
+  language: "NO",
+};
+
+//change a property
+
+Object.defineProperty(person4, "language", {
+  value: "EN",
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+
+//enumerate properties
+
+var txt2 = "";
+for (var x in person4) {
+  txt2 += person4[x] + "<br>";
+}
+
+document
+  .getElementById("test")
+  .appendChild(document.createElement("p")).innerHTML = txt2;
+
+//same code, except it hides the language property from enumeration
+
+Object.defineProperty(person4, "language", {
+  value: "EN",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+
+//enumerate properties
+var txt3 = "";
+for (var y in person4) {
+  txt3 += person4[y] + "<br>";
+}
+
+document
+  .getElementById("test")
+  .appendChild(document.createElement("p")).innerHTML = txt3;
+
+//same obj but creates a setter and a getter to secure upper case updates of language
+
+var language = person4.language;
+Object.defineProperty(person4, "language", {
+  get: function () {
+    return language;
+  },
+  set: function (value) {
+    language = value.toUpperCase();
+  },
+});
+
+//change lang, setter
+person4.language = "sr";
+
+//display lang, getter
+document
+  .getElementById("test")
+  .appendChild(document.createElement("p")).innerHTML = person4.language;
