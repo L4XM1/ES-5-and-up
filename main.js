@@ -193,3 +193,12 @@ console.log(obj);
 var myJSON = JSON.stringify(obj);
 
 console.log(myJSON);
+
+//Date.now()
+//returns the number of milliseconds since zero date (January 1. 1970 00:00:00 UTC).
+
+var currentTime = Date.now();
+console.log(currentTime);
+
+var dateThatIsReadable = new Date(currentTime);
+document.getElementById("date").textContent = dateThatIsReadable;
