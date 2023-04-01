@@ -177,3 +177,12 @@ console.log(indexOfApple); //2
 var indexOfAppleFromEnd = myFruits.lastIndexOf("Apple");
 
 console.log(indexOfAppleFromEnd); //4
+
+//JSON.parse()
+//A common use of JSON is to receive data from a web server. JSON.parse() is used to convert the text into a JavaScript object
+
+var stringFromServer = '{"name":"Aurora", "age":29, "city": "Stockholm"}';
+
+var obj = JSON.parse(stringFromServer);
+
+console.log(obj);
