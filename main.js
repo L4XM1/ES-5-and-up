@@ -202,3 +202,11 @@ console.log(currentTime);
 
 var dateThatIsReadable = new Date(currentTime);
 document.getElementById("date").textContent = dateThatIsReadable;
+
+//Date toISOString()
+//method converts a Date object to a string, using the ISO standard format
+
+var d = new Date();
+document
+  .getElementById("date")
+  .appendChild(document.createElement("p")).textContent = d.toISOString();
