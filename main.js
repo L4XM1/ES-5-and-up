@@ -208,5 +208,12 @@ document.getElementById("date").textContent = dateThatIsReadable;
 
 var d = new Date();
 document
-  .getElementById("date")
+  .getElementById("date-wrapper")
   .appendChild(document.createElement("p")).textContent = d.toISOString();
+
+//Date toJSON()
+//converts a Date object into a string, formatted as a JSON date
+
+document
+  .getElementById("date-wrapper")
+  .appendChild(document.createElement("p")).textContent = d.toJSON();
