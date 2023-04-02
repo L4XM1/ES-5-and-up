@@ -292,6 +292,7 @@ Object.defineProperty(person4, "language", {
   configurable: true,
 });
 
+console.log(person4);
 //enumerate properties
 
 var txt2 = "";
@@ -305,12 +306,12 @@ document
 
 //same code, except it hides the language property from enumeration
 
-Object.defineProperty(person4, "language", {
-  value: "EN",
-  writable: false,
-  enumerable: false,
-  configurable: true,
-});
+// Object.defineProperty(person4, "language", {
+//   value: "EN",
+//   writable: false,
+//   enumerable: false,
+//   configurable: true,
+// });
 
 //enumerate properties
 var txt3 = "";
@@ -324,20 +325,43 @@ document
 
 //same obj but creates a setter and a getter to secure upper case updates of language
 
-var language = person4.language;
+// var language = person4.language;
 Object.defineProperty(person4, "language", {
   get: function () {
-    return language;
+    return this._language;
   },
   set: function (value) {
-    language = value.toUpperCase();
+    this._language = value.toUpperCase();
   },
 });
 
 //change lang, setter
 person4.language = "sr";
-
+console.log(person4);
 //display lang, getter
 document
   .getElementById("test")
   .appendChild(document.createElement("p")).innerHTML = person4.language;
+
+//Bind() method
+//an object can borrow a method from another object
+
+var person5 = {
+  firstName5: "John",
+  lastName5: "Doe",
+  fullName5: function () {
+    return this.firstName5 + " " + this.lastName5;
+  },
+};
+
+var member = {
+  firstName5: "Hege",
+  lastName5: "Nielsen",
+};
+
+var fullNameBorrowed = person5.fullName5.bind(member);
+
+console.log(fullNameBorrowed());
+document
+  .getElementById("test")
+  .appendChild(document.createElement("p")).innerHTML = fullNameBorrowed();
