@@ -365,3 +365,28 @@ console.log(fullNameBorrowed());
 document
   .getElementById("test")
   .appendChild(document.createElement("p")).innerHTML = fullNameBorrowed();
+
+//Sometimes the bind() method has to be used to prevent losing this.
+
+var person6 = {
+  firstName: "Rambo",
+  lastName: "Max",
+  display: function () {
+    var x = document
+      .getElementById("test")
+      .appendChild(document.createElement("p"));
+    x.innerHTML = this.firstName + " " + this.lastName;
+  },
+};
+
+person6.display();
+
+//this keyword refers to an object. When a function is used as a callback, this is lost.
+//This example will try to display the person name after 3 seconds, but it will display undefined instead
+
+setTimeout(person6.display, 3000);
+
+//The bind() method solves this problem.
+
+var display = person6.display.bind(person6);
+setTimeout(display, 3000);
