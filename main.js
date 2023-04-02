@@ -390,3 +390,18 @@ setTimeout(person6.display, 3000);
 
 var display = person6.display.bind(person6);
 setTimeout(display, 3000);
+
+//Create object with an existing object as prototype
+
+var parentObj = {
+  firstName: "Marley",
+  lastName: "Max",
+};
+
+var donorObj = {
+  age: { value: 29 },
+};
+
+var child = Object.create(parentObj, donorObj);
+console.log(child.firstName);
+console.log(child.age);
