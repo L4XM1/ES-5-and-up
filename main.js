@@ -456,3 +456,8 @@ Object.freeze(person7);
 
 // Returns true if object is frozen
 console.log(Object.isFrozen(person7));
+
+//Trailing commas are commas that come after the last item in a list or object
+//ES5 allows trailing commas in object and array definitions. JSON does not allow trailing commas.
+
+var points = [1, 5, 10, 25, 40, 100];
