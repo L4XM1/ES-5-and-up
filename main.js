@@ -420,3 +420,17 @@ Object.defineProperty(person7, "lastName", {
 
 console.log(person7.lastName);
 // descriptor is an object that describes the attributes of a property that you want to define or modify. It allows you to specify the characteristics of the property such as its value, whether it's writable or not, whether it's enumerable or not, and whether it's configurable or not.
+
+//Accessing Properties
+console.log(Object.getOwnPropertyDescriptor(person6, "firstName"));
+
+//Returns all properties as an array
+var getAllProperties = Object.getOwnPropertyNames(person6);
+
+console.log(getAllProperties); //array of strings
+
+//Accessing the prototype
+console.log(Object.getPrototypeOf(person6));
+
+//Returns enumerable (whether the property can be iterated over) properties as an array
+console.log(Object.keys(person7));
