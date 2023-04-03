@@ -399,9 +399,24 @@ var parentObj = {
 };
 
 var donorObj = {
-  age: { value: 29 },
+  age: { value: 29 }, //Object.create() method will be able to use this descriptor to create the age property on the child object
 };
 
-var child = Object.create(parentObj, donorObj);
+var child = Object.create(parentObj, donorObj); //expects the second argument to be an object with property descriptors
 console.log(child.firstName);
 console.log(child.age);
+
+// Adding or changing an object property
+// Object.defineProperty(object, property, descriptor)
+
+var person7 = {};
+
+Object.defineProperty(person7, "lastName", {
+  value: "M",
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+
+console.log(person7.lastName);
+// descriptor is an object that describes the attributes of a property that you want to define or modify. It allows you to specify the characteristics of the property such as its value, whether it's writable or not, whether it's enumerable or not, and whether it's configurable or not.
