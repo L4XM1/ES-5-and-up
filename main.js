@@ -391,6 +391,8 @@ setTimeout(person6.display, 3000);
 var display = person6.display.bind(person6);
 setTimeout(display, 3000);
 
+//Managing Objects
+
 //Create object with an existing object as prototype
 
 var parentObj = {
@@ -434,3 +436,23 @@ console.log(Object.getPrototypeOf(person6));
 
 //Returns enumerable (whether the property can be iterated over) properties as an array
 console.log(Object.keys(person7));
+
+//Protecting Objects
+
+// Prevents adding properties to an object
+Object.preventExtensions(person7);
+
+// Returns true if properties can be added to an object
+console.log(Object.isExtensible(person7));
+
+// Prevents changes of object properties (not values)
+Object.seal(person7);
+
+// Returns true if object is sealed
+console.log(Object.isSealed(person7));
+
+// Prevents any changes to an object
+Object.freeze(person7);
+
+// Returns true if object is frozen
+console.log(Object.isFrozen(person7));
