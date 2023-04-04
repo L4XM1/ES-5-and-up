@@ -461,3 +461,42 @@ console.log(Object.isFrozen(person7));
 //ES5 allows trailing commas in object and array definitions. JSON does not allow trailing commas.
 
 var points = [1, 5, 10, 25, 40, 100];
+
+// ES 6
+
+//let keyword allows you to declare a variable with block scope
+let u = 10; //here u is 10
+{
+  let u = 2; //here u is 2
+}
+//here u is 10
+
+//const keyword allows you to declare a constant (constant value)
+
+var a = 10; //here a is 10
+{
+  const a = 2; //here a is 2
+}
+//here a is 10
+
+//Arrow Functions
+//You don't need the function keyword, the return keyword, and the curly brackets
+
+//ES 5
+var h = function (x, y) {
+  return x * y;
+};
+console.log(h(4, 8));
+
+//ES 6
+const t = (x, y) => x * y;
+
+console.log(t(2, 6));
+
+// () => do not have their own this, not suited for object methods, not hoisted, must be defined before they are used
+//const is safer than using var, because a function expression is always a constant value
+//omit the return keyword and the curly brackets if the function is a *single statement*
+
+const r = (x, y) => {
+  return x * y;
+};
