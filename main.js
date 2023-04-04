@@ -511,3 +511,40 @@ const q4 = ["Oct", "Nov", "Dec"];
 const year = [...q1, ...q2, ...q3, ...q4];
 
 console.log(year); // ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+//The "Spread" operator can be used to expand an iterable into more arguments for function calls
+
+const nums5 = [11, 22, 44, 66, 88];
+let maxValue = Math.max(...nums5); //instead of NaN because it's an array and would be treated as one argunent, with ... it logs 88
+//to spread the elements of the array into individual arguments to Math.max().
+console.log(maxValue);
+
+//The For/Of Loop
+//oops through the values of an iterable objects (data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more)
+
+/* 
+for (variable of iterable) {
+  code block to be executed
+} 
+*/
+
+//variable - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var
+
+//array
+const animals = ["dog", "cat", "monkey", "racoon"];
+let text = "";
+
+for (let a of animals) {
+  console.log((text += a + " "));
+}
+console.log(text);
+
+//string
+let lang = "JavaScript";
+let text2 = "";
+
+for (let l of lang) {
+  console.log((text2 += l + " "));
+}
+
+console.log(text2);
