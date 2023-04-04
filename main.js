@@ -551,11 +551,30 @@ console.log(text2);
 
 //JavaScript Maps
 //use an Object as a key
+//data structures that allow you to store key-value pairs where both the keys and values can be of any data type.
+//maping values to keys
 
 const fruits = new Map([
+  //Map literal syntax
   ["apples", 5],
   ["bananas", 7],
   ["oranges", 3],
 ]);
+const myMap = new Map();
+myMap.set("hello", 11);
+console.log(myMap);
 
 console.log(fruits);
+
+//JavaScript Sets
+// a set is an object that stores a collection of unique values, where each value can occur only once in the set. Sets are similar to arrays, but they do not have a specific order, and they cannot contain duplicate values.
+//sets are not indexed
+
+const letters = new Set();
+
+letters.add("a");
+letters.add("b");
+letters.add("c");
+
+console.log(letters.size);
+console.log(letters.has("a"));
