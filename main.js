@@ -548,3 +548,14 @@ for (let l of lang) {
 }
 
 console.log(text2);
+
+//JavaScript Maps
+//use an Object as a key
+
+const fruits = new Map([
+  ["apples", 5],
+  ["bananas", 7],
+  ["oranges", 3],
+]);
+
+console.log(fruits);
