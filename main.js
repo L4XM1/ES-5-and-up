@@ -567,7 +567,7 @@ console.log(myMap);
 console.log(fruits);
 
 //JavaScript Sets
-// a set is an object that stores a collection of unique values, where each value can occur only once in the set. Sets are similar to arrays, but they do not have a specific order, and they cannot contain duplicate values.
+//a set is an object that stores a collection of unique values, where each value can occur only once in the set. Sets are similar to arrays, but they do not have a specific order, and they cannot contain duplicate values.
 //sets are not indexed
 
 const letters = new Set();
@@ -578,3 +578,30 @@ letters.add("c");
 
 console.log(letters.size);
 console.log(letters.has("a"));
+
+//JavaScript Classes
+//are templates for JavaScript Objects
+//Use keyword class, add a method named constructor()
+//A JavaScript class is not an object.
+//It is a template for JavaScript objects.
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+
+  logCar() {
+    console.log(
+      `Hello, the car's name is ${this.name} and it was made in ${this.year}`
+    );
+  }
+}
+
+let myCar = new Car("Mini One", 2003);
+myCar.logCar();
+
+let momCar = new Car("Renault", 2004);
+momCar.logCar();
+
+//When you have a class, you can use the class to create multiple instances of objects
