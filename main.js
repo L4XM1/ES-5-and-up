@@ -605,3 +605,140 @@ let momCar = new Car("Renault", 2004);
 momCar.logCar();
 
 //When you have a class, you can use the class to create multiple instances of objects
+
+//JavaScript Promises
+//object that links "Producing Code" and "Consuming Code"
+//"Producing Code" can take some time and "Consuming Code" must wait for the result
+
+const myPromise = new Promise(function (myResolve, myReject) {
+  //callback functions that the Promise will call depending on whether the asynchronous operation it represents was successful or not.
+  if (true) {
+    myResolve(console.log("Success!"));
+  } else {
+    myReject(console.log("Sorry!"));
+  }
+});
+
+myPromise.then(
+  function (value) {
+    document
+      .getElementById("test")
+      .appendChild(document.createElement("p")).innerHTML = value;
+  },
+  function (error) {
+    document
+      .getElementById("test")
+      .appendChild(document.createElement("p")).innerHTML = error;
+  }
+);
+
+myPromise.then("Hello");
+
+//A callback is a function passed as an argument to another function.
+
+const mySecondPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("I love you!");
+  }, 3000);
+});
+
+mySecondPromise.then((val) => {
+  document
+    .getElementById("test")
+    .appendChild(document.createElement("p")).innerHTML = val;
+});
+
+//The Symbol Type
+//a primitive datatype, represents a unique "hidden" identifier that no other code can accidentally access. Symbols are always unique.
+
+const p = {
+  firstName: "Jhon",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue",
+};
+
+let id = Symbol("id");
+p[id] = 444;
+
+console.log(Symbol("id") === Symbol("id")); //false. Unique!
+console.log(p[id]); //p.id is still undefined
+
+//or Object.getOwnPropertySymbols() that eturns an array of all the symbol properties on the object.
+
+//Default Parameter Values
+
+function myFu(x, y = 10) {
+  return x + y;
+}
+
+console.log(myFu(5)); //15
+
+//Function Rest Parameter
+//The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:
+
+function sum(...args) {
+  let sum = 0;
+  for (let arg of args) sum += arg;
+  return sum;
+}
+
+let s = sum(2, 8, 10, 20);
+console.log(s);
+
+//String.includes()
+//The includes() method returns true if a string contains a specified value, otherwise false
+
+let msg = "Hello from the other side";
+
+console.log(msg.includes("other"));
+
+//String.startsWith()
+//The startsWith() method returns true if a string begins with a specified value, otherwise false
+
+let te = "Hi, what's up?";
+console.log(te.startsWith("Hi"));
+
+//String.endsWith()
+
+let n = "Jhon Jovanovic";
+console.log(n.endsWith("Jovanovic"));
+
+//Array.from()
+//The Array.from() method returns an Array object from any object with a length property or any iterable object. Ex. Array from a String:
+
+console.log(Array.from("ABCDEFG"));
+
+//Array keys()
+//The keys() method returns an Array Iterator object with the keys of an array.
+
+const veggies = ["Carrot", "Potato", "Broccoli", "Spinach"];
+const keys = veggies.keys();
+
+let res = "";
+for (let key of keys) {
+  res += key + "<br>";
+}
+document.write(res);
+
+//Array find()
+//returns the value of the first array element that passes a test function
+//ex. finds (returns the value of ) the first element that is larger than 18
+
+const numb = [4, 9, 16, 25, 29];
+let first = numb.find(myFunct);
+
+function myFunct(value, index, array) {
+  return value > 18;
+}
+
+document.write(first + "<br>");
+
+//Array findIndex()
+//The findIndex() method returns the index of the first array element that passes a test function.
+
+let indexOfFirstNumber = numb.findIndex(myFunct);
+document.write(indexOfFirstNumber);
+
+//New Math Methods
+//added methods to the Math object
