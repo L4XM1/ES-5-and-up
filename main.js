@@ -742,3 +742,69 @@ document.write(indexOfFirstNumber);
 
 //New Math Methods
 //added methods to the Math object
+//ES6 added the following methods to the Math object:
+
+// Math.trunc() // it rounds the number towards zero.
+// Math.sign(x) //returns if x is negative, null or positive: -1, 0, 1
+// Math.cbrt() // returns the cube root of x
+
+// Math.log2() // returns the base 2 logarithm of x: Math.log2(8) returns 3, because 2 raised to the power of 3 equals 8. Math.log2(16) returns 4, because 2 raised to the power of 4 equals 16.
+
+// Math.log10()
+
+console.log(Math.trunc(-5.8));
+console.log(Math.sign(3));
+console.log(Math.cbrt(125));
+console.log(Math.log2(7));
+console.log(Math.log10(100)); //logarithm base 10 of 100 is 2, because 10 raised to the power of 2 is 100.
+
+//New Number Properties
+
+//EPSILON
+//a measure of the smallest possible difference between two numbers that JavaScript can distinguish.
+let e = Number.EPSILON;
+console.log(e); //0.0000000000000002220446049250313
+
+// MAX_SAFE_INTEGER
+let m = Number.MAX_SAFE_INTEGER;
+console.log(m);
+
+//New Number Methods
+//The Number.isInteger() method returns true if the argument is an integer.
+
+console.log(Number.isInteger(10.2));
+
+//The Number.isSafeInteger() Method //returns true if the argument is a safe integer
+
+console.log(Number.isSafeInteger(22222222222222)); //Safe integers are all integers from -(253 - 1) to +(253 - 1).
+//This is safe: 9007199254740991. This is not safe: 9007199254740992.
+
+//New Global Methods
+
+//The isFinite() Method //eturns false if the argument is Infinity or NaN.
+
+console.log(isFinite(10 / 0));
+
+//The isNaN() Method
+
+console.log(isNaN("Hello"));
+
+//Object entries()
+//Create an Array Iterator, and then iterate over the key/value pairs:
+
+const lettersArr = ["a", "b", "c", "d", "e", "f", "g"];
+const l = lettersArr.entries(); //returns an Array Iterator object with key/value pairs
+
+for (let x of l) {
+  console.log(x);
+}
+
+//Modules
+
+//Import from named exports
+import { name, age } from "./person.js";
+//We use the curly braces to explicitly list the names of the exports we want to import. These exports must be defined as named exports in the person.js module.
+
+//Import from default exports
+import message from "./message.js";
+//the message variable will contain the value of the default export from ./message.js.
