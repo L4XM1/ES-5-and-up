@@ -802,9 +802,158 @@ for (let x of l) {
 //Modules
 
 //Import from named exports
-import { name, age } from "./person.js";
+
+// import { name, age } from "./person.js";
+
 //We use the curly braces to explicitly list the names of the exports we want to import. These exports must be defined as named exports in the person.js module.
 
 //Import from default exports
-import message from "./message.js";
+
+// import message from "./message.js";
+
 //the message variable will contain the value of the default export from ./message.js.
+
+//ECMAScript 2016
+
+//Exponentiation Operator - The exponentiation operator (**) raises the first operand to the power of the second operand.
+
+let firstNum = 5;
+let secondNum = firstNum ** 2;
+console.log(secondNum); //x ** y produces the same result as Math.pow(x, y):
+
+let power = Math.pow(firstNum, 2);
+console.log(power);
+
+//Exponentiation Assignment
+//The exponentiation assignment operator (**=) raises the value of a variable to the power of the right operand.
+
+console.log(firstNum ** 2);
+
+//Array includes()
+//check if an element is present in an array
+
+const furniture = ["chair", "bed", "table"];
+
+console.log(furniture.includes("chair"));
+
+//From 2016, versions are named by year:
+
+//New Features in ECMAScript 2017
+
+//String Padding
+
+let padThis = "5";
+padThis = padThis.padStart(4, "-");
+padThis = padThis.padEnd(8, "*");
+console.log(padThis);
+
+//Object Entries
+//returns an array of the key/value pairs in an object
+
+const fruitObj = { Bananas: 100, Oranges: 200, Apples: 400 };
+
+let objEntries = Object.entries(fruitObj);
+console.log(objEntries);
+//Object.entries() makes it simple to use objects in loops:
+
+let final = " ";
+for (let [fruit, value] of Object.entries(fruitObj)) {
+  final += fruitObj + ": " + value + "<br>";
+}
+
+//Object.entries() makes it simple to convert objects to maps
+
+const myFruitMap = new Map(Object.entries(fruitObj));
+console.log(myFruitMap);
+
+//Object Values
+//returns a single dimension array of the object values:
+
+const singleDimensionArr = Object.values(person);
+console.log(singleDimensionArr);
+
+//Async Functions
+
+async function myDisplay() {
+  let myProm = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("I love you!!!!!");
+    }, 3000);
+  });
+  document.getElementById("test").innerHTML = await myProm;
+}
+
+myDisplay();
+
+//ECMAScript 2018
+
+//Asynchronous Iteration
+
+//asynchronous iterators and iterables With asynchronous iterables, we can use the await keyword in for/of loops.
+
+// for await () {}
+
+function* myGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const iterator = myGenerator();
+console.log(iterator.next().value); // Output: 1
+console.log(iterator.next().value); // Output: 2
+console.log(iterator.next().value); // Output: 3
+
+async function* asyncGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+(async function () {
+  for await (let num of asyncGenerator()) {
+    console.log(num);
+  }
+})();
+
+//Promise.finally
+//ECMAScript 2018 finalizes the full implementation of the Promise object with Promise.finally:
+
+//Promise.finally() is a method in JavaScript that is used to attach a callback function to a promise that is called when the promise is settled, whether it was fulfilled or rejected.
+
+//The finally() method returns a new promise that is resolved with the original promise's value or rejected with its reason (if any), after the callback function has been executed.
+
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Success!");
+  }, 1000);
+});
+
+promise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    console.log("Promise completed.");
+  });
+//finally() method to attach a callback function that logs the message 'Promise completed.' to the console after the promise is settled, whether it was fulfilled or rejected.
+
+//Object Rest Properties
+//This allows us to destruct an object and collect the leftovers onto a new object:
+
+let { k, j, ...z } = { k: 55, j: 66, a: 77, b: 88 };
+console.log(k);
+console.log(j);
+console.log(z);
+
+//RegExp Features
+
+// Unicode Property Escapes (\p{...})
+// Lookbehind Assertions (?<= ) and (?<! )
+// Named Capture Groups
+// s (dotAll) Flag
+
+//JavaScript Threads, Shared Memory and SharedArrayBuffer object
